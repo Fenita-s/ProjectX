@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block konten %}
+    <h1>LOGIN</h1>
+    <form action="/aksi_login" method="post">
+        <div class="mb-3">
+          <label for="user" class="form-label">Username</label>
+          <input type="text" class="form-control" id="user" name="username">
+          <div id="useradmin" class="form-text">Enter the correct answer to access the admin page 🤫</div>
+        </div>
+        <div class="mb-3">
+          <label for="pass" class="form-label">Password</label>
+          <input type="password" class="form-control" id="pass" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+{% endblock %}

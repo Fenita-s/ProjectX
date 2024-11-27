@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block konten %}
+    <h1>HOME</h1> <br>
+
+    <form action="/simpan" method="post" >
+        <input type="text" name="jenis" placeholder="Enter jenis" ><br>
+        <input type="text" name="isian" placeholder="Enter isian" ><br>
+        <input type="number" name="harga" min="70000" max="120000" placeholder="harga" ><br>
+        <button type="submit">KIRIM</button>
+    </form> <br>
+
+    <table border="2" style=" width:  60%;">
+        <tr> 
+            <th>JENIS</th>
+            <th>ISIAN</th>
+            <th>HARGA</th>
+        </tr>
+
+        {% for result in data %}
+        <tr>
+            <td>{{ result[1] }}</td>
+            <td>{{ result[2] }}</td>
+            <td>{{ result[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <div class="user" style="position: fixed; bottom: 10px; right: 10px; border: 2px solid black; width: 250px; padding: 5px; border-radius: 5px; background-color: palegoldenrod;">
+        <p>Username : kang_martabak</p>
+        <p>Password : manis</p>
+    </div>
+{% endblock %}

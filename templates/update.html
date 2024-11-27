@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block konten %}
+    <h1>INPUT DATA MARTABAK BARU</h1>
+    <form action="/aksiupdate" method="post" >
+        <input type="hidden" name="id_martabak" placeholder="Enter id_martabak" value="{{ value[0] }}" >
+        <input type="text" name="jenis" placeholder="Enter jenis" value="{{ value[1] }}" ><br>
+        <input type="text" name="isian" placeholder="Enter isian" value="{{ value[2] }}" ><br>
+        <input type="number" name="harga" min="70000" max="120000"  placeholder="Enter harga" value="{{ value[3] }}"><br>
+        <button type="submit">KIRIM</button>
+    </form>
+{% endblock %}

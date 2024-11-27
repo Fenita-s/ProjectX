@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block konten %}
+    <header>
+        <h1>ADMIN PAGE</h1>
+        <b>Edit and change delete the menu with your admin power! 😎</b>
+    </header>
+
+    <a href="{{ url_for('logout' ) }}" style="position: fixed; bottom: 10px; right: 10px; border: 2px solid black; width: 100px; padding: 5px; border-radius: 50px; background-color: maroon; color: azure; display: flex; justify-content: center; align-items: center;">LOGOUT</a>
+    <table border="2" style="width: 60%;">
+        <tr> 
+            <th>JENIS</th>
+            <th>ISIAN</th>
+            <th>HARGA</th>
+            <th>OPSI</th>
+        </tr>
+
+        {% for result in data %}
+        <tr>
+            <td>{{ result[1] }}</td>
+            <td>{{ result[2] }}</td>
+            <td>{{ result[3] }}</td>
+            <td> <a href="/update/{{ result[0] }}">UPDATE</a> - <a href="/hapus/{{ result[0] }}">DELETE</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
